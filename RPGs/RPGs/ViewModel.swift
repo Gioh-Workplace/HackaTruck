@@ -15,6 +15,8 @@ struct RPG: Decodable, Hashable {
     let classe : String?
     let idade : String?
     let sistema: String?
+    let desc: String?
+    let img:String?
 }
 
 class ViewModelRPG : ObservableObject {

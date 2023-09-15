@@ -31,10 +31,10 @@ struct ContentView: View {
                         
                         ForEach(rpg.personagens, id: \._id) { personagem in
                             ZStack{
-                                Rectangle()
-                                    .fill(.blue)
+                                Image("bground")
+                                    .resizable()
                                     .cornerRadius(10)
-                                    .frame(width: 250,height: 120)
+                                    .frame(width: 250,height: 110)
                                 
                                 NavigationLink("\(personagem.nome!)"){Personagem(char:personagem)}
                                     .tint(.black)
