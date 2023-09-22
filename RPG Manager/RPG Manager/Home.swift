@@ -24,7 +24,7 @@ struct Home: View {
                     Spacer()
                     //Scrollview
                     ZStack{
-                        Image("Titles").resizable().frame(width: 250,height: 100).cornerRadius(20)
+                        Image("BgMenu2").resizable().frame(width: 250,height: 100).cornerRadius(20)
                         
                         NavigationLink("Introdução"){Introducao()}
                             .font(.largeTitle)
@@ -35,7 +35,7 @@ struct Home: View {
                     }
                     
                     ZStack{
-                        Image("Titles").resizable().frame(width: 250,height: 100).cornerRadius(20)
+                        Image("BgMenu2").resizable().frame(width: 250,height: 100).cornerRadius(20)
                         
                         NavigationLink("Livros"){Books()}
                             .font(.largeTitle)
@@ -45,9 +45,9 @@ struct Home: View {
                         
                     }
                     ZStack{
-                        Image("Titles").resizable().frame(width: 250,height: 100).cornerRadius(20)
+                        Image("BgMenu2").resizable().frame(width: 250,height: 100).cornerRadius(20)
                         
-                        NavigationLink("Meus personagens"){Personagens()}
+                        NavigationLink("Personagens"){MidView()}
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(Color.black)

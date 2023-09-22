@@ -9,8 +9,20 @@ import SwiftUI
 
 struct Personagens: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        ZStack{
+            Image("BG")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+                .opacity(0.87)
+            VStack{
+                
+            }
+            
+            
+        }//Fim ZStack
+        
+    }//Fim body
 }
 
 struct Personagens_Previews: PreviewProvider {
