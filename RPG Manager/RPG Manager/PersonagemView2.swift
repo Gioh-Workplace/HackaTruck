@@ -1,67 +1,14 @@
 //
-//  UploadPersonagem2.swift
+//  PersonagemView2.swift
 //  RPG Manager
 //
-//  Created by Student06 on 22/09/23.
+//  Created by Student06 on 26/09/23.
 //
 
 import SwiftUI
-func teste(valor:String) -> String{
-    if(valor == "1" || valor == "2"){
-       return("-4")
-   }
-   else if(valor == "3" ||  valor == "4"){
-       return("-3")
-   }
-    if(valor == "5" || valor == "6"){
-       return("-2")
-   }
-   else if(valor == "7" ||  valor == "8"){
-       return("-1")
-   }
-    if(valor == "9" || valor == "10" || valor == "11"){
-       return("0")
-   }
-   else if(valor == "12" ||  valor == "13"){
-       return("+1")
-   }
-    if(valor == "14" || valor == "15"){
-       return("+2")
-   }
-   else if(valor == "16" ||  valor == "17"){
-       return("+3")
-   }
-    else if(valor == "18" ||  valor == "19"){
-        return("+4")
-    }
-    else if(valor == "20" ||  valor == "21"){
-        return("+5")
-    }
-    else if(valor == "22" ||  valor == "23"){
-        return("+6")
-    }
-    else if(valor == "24"){
-        return("+7")
-    }
-    else{
-        return "0"
-    }
-}
-struct UploadPersonagem2: View {
-    @State var nome:String
-    @State var raca:String
-    @State var classe:String
-    @State var idade:String
-    @State var player:String
-    @State var url:String
-    @State var desc:String
-    @State var sistem:String = ""
-    @State var cha:String = "0"
-    @State var int:String = "0"
-    @State var str:String = "0"
-    @State var dex:String = "0"
-    @State var wis:String = "0"
-    @State var const:String = "0"
+
+struct PersonagemView2: View {
+    var perso:RPG
     var body: some View {
         ZStack{
             Image("BG")
@@ -70,9 +17,16 @@ struct UploadPersonagem2: View {
                 .ignoresSafeArea()
                 .opacity(0.87)
             VStack(spacing: 15){
-                Image("Novo")
-                    .resizable()
-                    .frame(width: 270,height: 80)
+                
+                AsyncImage(url: URL(string:perso.img!))  { image in
+                    image.resizable()
+                        .frame(width:160,height: 160)
+                } placeholder: {
+                    Image(systemName: "person.crop.square.fill")
+                        .resizable().frame(width: 160, height: 160)
+                        .foregroundColor(.gray)
+                }
+            
              //   Spacer()
                 
                 ZStack{
@@ -83,10 +37,9 @@ struct UploadPersonagem2: View {
                         .padding(.leading,-5)
                     VStack(spacing: 5){
                         HStack{
-                            Text("Sistema:")
+                            Text("Sistema:\(perso.sistema!)")
                             
-                            TextField("Insira aqui",text:$sistem)
-                            
+                    
                             
                         }//hstack
                         .padding()
@@ -105,9 +58,7 @@ struct UploadPersonagem2: View {
                                     ZStack{
                                         Image("CharSquare").resizable().frame(width: 110,height: 110)
                                         VStack{
-                                            Text("\(teste(valor:str))")
-                                            TextEditor(text:$str)
-                                                .keyboardType(.numberPad)
+                                            Text("\(perso.str!)")
                                                 .foregroundColor(.black)
                                                 .frame(width: 100,height: 50)
                                                 .multilineTextAlignment(.center)
@@ -116,10 +67,9 @@ struct UploadPersonagem2: View {
                                                 .font(.largeTitle)
                                                 .fontWeight(.bold)
                                                 .multilineTextAlignment(.center)
-                                                
                                             
                                             
-                                        }.padding(.top,-23)
+                                        }
                                     }
                                 }
                                 Spacer()
@@ -128,8 +78,7 @@ struct UploadPersonagem2: View {
                                     ZStack{
                                         Image("CharSquare").resizable().frame(width: 110,height: 110)
                                         VStack{
-                                            Text("\(teste(valor:dex))")
-                                            TextEditor(text:$dex)
+                                            Text("\(perso.dex!)")
                                                 .foregroundColor(.black)
                                                 .frame(width: 100,height: 50)
                                                 .multilineTextAlignment(.center)
@@ -140,7 +89,7 @@ struct UploadPersonagem2: View {
                                                 .multilineTextAlignment(.center)
                                             
                                             
-                                        }.padding(.top,-23)
+                                        }
                                     }
                                     
                                 }
@@ -151,8 +100,7 @@ struct UploadPersonagem2: View {
                                     ZStack{
                                         Image("CharSquare").resizable().frame(width: 110,height: 110)
                                         VStack{
-                                            Text("\(teste(valor:str))")
-                                            TextEditor(text:$const)
+                                            Text("\(perso.const!)")
                                                 .foregroundColor(.black)
                                                 .frame(width: 100,height: 50)
                                                 .multilineTextAlignment(.center)
@@ -163,7 +111,7 @@ struct UploadPersonagem2: View {
                                                 .multilineTextAlignment(.center)
                                             
                                             
-                                        }.padding(.top,-23)
+                                        }
                                     }
                                 }
                                 Spacer()
@@ -172,9 +120,7 @@ struct UploadPersonagem2: View {
                                     ZStack{
                                         Image("CharSquare").resizable().frame(width: 110,height: 110)
                                         VStack{
-                                            Text("\(teste(valor:int))")
-                                           
-                                            TextEditor(text:$int)
+                                            Text("\(perso.int!)")
                                                 .foregroundColor(.black)
                                                 .frame(width: 100,height: 50)
                                                 .multilineTextAlignment(.center)
@@ -185,7 +131,7 @@ struct UploadPersonagem2: View {
                                                 .multilineTextAlignment(.center)
                                             
                                             
-                                        }.padding(.top,-23)
+                                        }
                                     }
                                 }
                             }
@@ -195,8 +141,7 @@ struct UploadPersonagem2: View {
                                     ZStack{
                                         Image("CharSquare").resizable().frame(width: 110,height: 110)
                                         VStack{
-                                            Text("\(teste(valor:wis))")
-                                            TextEditor(text:$wis)
+                                            Text("\(perso.wis!)")
                                                 .foregroundColor(.black)
                                                 .frame(width: 100,height: 50)
                                                 .multilineTextAlignment(.center)
@@ -207,7 +152,7 @@ struct UploadPersonagem2: View {
                                                 .multilineTextAlignment(.center)
                                             
                                             
-                                        }.padding(.top,-23)
+                                        }
                                     }
                                 }
                                 Spacer()
@@ -216,8 +161,7 @@ struct UploadPersonagem2: View {
                                     ZStack{
                                         Image("CharSquare").resizable().frame(width: 110,height: 110)
                                         VStack{
-                                            Text("\(teste(valor:cha))")
-                                            TextEditor(text:$cha)
+                                            Text("\(perso.cha!)")
                                                 .foregroundColor(.black)
                                                 .frame(width: 100,height: 50)
                                                 .multilineTextAlignment(.center)
@@ -228,7 +172,7 @@ struct UploadPersonagem2: View {
                                                 .multilineTextAlignment(.center)
                                             
                                             
-                                        }.padding(.top,-23)
+                                        }
                                     }
                                 }
                             }
@@ -238,27 +182,16 @@ struct UploadPersonagem2: View {
                     .frame(width: 330,height: 420)
                     .padding(.top,-10)
                 }//Fim 2 Zstack
-                NavigationLink{Upload()} label:{
-                    ZStack{
-                        Rectangle()
-                            .frame(width: 200,height: 60)
-                            .foregroundColor(.cyan)
-                            .cornerRadius(40)
-                        Text("Upload")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                    }
-                    
-                }
-                Spacer()
+                
             }//Fim VStack
-        }//FIM ZSTACK
+        }
+        
+        
     }
 }
 
-struct UploadPersonagem2_Previews: PreviewProvider {
+struct PersonagemView2_Previews: PreviewProvider {
     static var previews: some View {
-        UploadPersonagem2(nome: "", raca: "", classe: "", idade: "", player: "", url: "", desc: "")
+        PersonagemView2(perso: RPG(_id: "",_rev:"",nome: "",jogador: "PENIS",raca : "", classe :"",idade : "",sistema: "",desc:"Albion Online é um MMORPG sandbox em que você escreve sua própria história, em vez de seguir um caminho pré-determinado. Explore um vasto mundo aberto que consiste de 5 ecossistemas únicos. Tudo o que você faz gera um impacto no mundo, já que em Albion, a economia é conduzida pelo jogador. Cada peça de equipamento é construída por jogadores a partir dos recursos obtidos por eles. O equipamento que você usa define quem você é. Ir de cavaleiro para feiticeiro é tão fácil quanto trocar a armadura e a arma, ou uma combinação das duas. Aventure-se no mundo aberto e enfrente os habitantes e as criaturas de Albion. Saia em expedições ou entre em masmorras para enfrentar inimigos ainda mais desafiadores. Enfrente outros jogadores em confrontos do mundo aberto, lute pelo controle de territórios ou cidades inteiras em batalhas táticas em grupo. Relaxe descansando em sua ilha pessoal, onde você pode construir uma casa, cultivar alimentos e criar animais. Junte-se à uma guilda, tudo fica mais divertido quando se trabalha em equipe. Entre hoje mesmo no mundo de Albion, e escreva sua própria história.",img:"https://i.imgur.com/DU5GneG.jpg",str:18,dex:16,const:10,int:10,wis:18,cha:18))
     }
 }

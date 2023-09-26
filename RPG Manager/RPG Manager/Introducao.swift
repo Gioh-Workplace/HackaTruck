@@ -9,7 +9,22 @@ import SwiftUI
 
 struct Introducao: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack{
+            Image("BG").resizable().scaledToFill().ignoresSafeArea()
+            Image("bground").resizable().frame(width: 400,height: 500)
+            VStack{
+            
+                Text("Introducao")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Divider()
+                
+                    .overlay(.black)
+                    Text("Albion online é um mmorpg sandbox em ")
+                Spacer()
+            }.frame(width:400,height: 500)
+        }
     }
 }
 

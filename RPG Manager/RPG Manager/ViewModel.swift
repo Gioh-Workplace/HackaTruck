@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct RPG: Decodable, Hashable {
+struct RPG: Codable, Hashable {
     
     let _id: String?
+    let _rev:String?
     let nome : String?
     let jogador: String?
     let raca : String?
@@ -18,14 +19,47 @@ struct RPG: Decodable, Hashable {
     let sistema: String?
     let desc: String?
     let img:String?
-        
+    let str:Int?
+    let dex:Int?
+    let const:Int?
+    let int:Int?
+    let wis:Int?
+    let cha:Int?
+    
 }
 
 class ViewModelRPG : ObservableObject {
     @Published var personagens : [RPG] = []
     
     func fetch(){
-        guard let url = URL(string: "http://192.168.128.254:1880/AmongUsRead" ) else{
+        guard let url = URL(string: "http://192.168.128.254:1880/RPGData" ) else{
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url){ [weak self] data, _, error in
+                guard let data = data, error == nil else{
+                return
+            }
+            
+            do {
+                let parsed = try JSONDecoder().decode([RPG].self, from: data)
+                
+                DispatchQueue.main.async {
+                    self?.personagens = parsed
+                }
+            }catch{
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
+}
+class ViewModelRPGPOST : ObservableObject {
+    @Published var personagens : [RPG] = []
+    
+    func fetch(){
+        guard let url = URL(string: "http://192.168.128.254:1880/RPGPost" ) else{
             return
         }
         

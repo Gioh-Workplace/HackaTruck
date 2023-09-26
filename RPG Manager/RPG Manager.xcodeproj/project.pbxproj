@@ -10,6 +10,8 @@
 		F4A53EE12ABE0F6500BB4AB8 /* MidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A53EE02ABE0F6500BB4AB8 /* MidView.swift */; };
 		F4A53EE32ABE110E00BB4AB8 /* UploadPersonagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A53EE22ABE110E00BB4AB8 /* UploadPersonagem.swift */; };
 		F4A53EE52ABE250800BB4AB8 /* UploadPersonagem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A53EE42ABE250800BB4AB8 /* UploadPersonagem2.swift */; };
+		F4E719722AC365B40072236C /* PersonagemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E719712AC365B40072236C /* PersonagemView.swift */; };
+		F4E719742AC3692D0072236C /* PersonagemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E719732AC3692D0072236C /* PersonagemView2.swift */; };
 		F4EE7B692AC223BB001715CB /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE7B682AC223BB001715CB /* Upload.swift */; };
 		F4F1C9882ABA0A3D000C3B0A /* RPG_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1C9872ABA0A3D000C3B0A /* RPG_ManagerApp.swift */; };
 		F4F1C98A2ABA0A3D000C3B0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1C9892ABA0A3D000C3B0A /* ContentView.swift */; };
@@ -26,6 +28,8 @@
 		F4A53EE02ABE0F6500BB4AB8 /* MidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidView.swift; sourceTree = "<group>"; };
 		F4A53EE22ABE110E00BB4AB8 /* UploadPersonagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPersonagem.swift; sourceTree = "<group>"; };
 		F4A53EE42ABE250800BB4AB8 /* UploadPersonagem2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPersonagem2.swift; sourceTree = "<group>"; };
+		F4E719712AC365B40072236C /* PersonagemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemView.swift; sourceTree = "<group>"; };
+		F4E719732AC3692D0072236C /* PersonagemView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonagemView2.swift; sourceTree = "<group>"; };
 		F4EE7B682AC223BB001715CB /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		F4F1C9842ABA0A3D000C3B0A /* RPG Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPG Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F1C9872ABA0A3D000C3B0A /* RPG_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPG_ManagerApp.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				F4F1C9A12ABA3EC8000C3B0A /* Books.swift */,
 				F4F1C99B2ABA3E84000C3B0A /* Introducao.swift */,
 				F4F1C99D2ABA3E8A000C3B0A /* Personagens.swift */,
+				F4E719712AC365B40072236C /* PersonagemView.swift */,
+				F4E719732AC3692D0072236C /* PersonagemView2.swift */,
 				F4A53EE02ABE0F6500BB4AB8 /* MidView.swift */,
 				F4A53EE22ABE110E00BB4AB8 /* UploadPersonagem.swift */,
 				F4A53EE42ABE250800BB4AB8 /* UploadPersonagem2.swift */,
@@ -169,12 +175,14 @@
 				F4A53EE32ABE110E00BB4AB8 /* UploadPersonagem.swift in Sources */,
 				F4F1C99C2ABA3E84000C3B0A /* Introducao.swift in Sources */,
 				F4F1C98A2ABA0A3D000C3B0A /* ContentView.swift in Sources */,
+				F4E719742AC3692D0072236C /* PersonagemView2.swift in Sources */,
 				F4EE7B692AC223BB001715CB /* Upload.swift in Sources */,
 				F4F1C9982ABA1D61000C3B0A /* Home.swift in Sources */,
 				F4F1C99E2ABA3E8A000C3B0A /* Personagens.swift in Sources */,
 				F4A53EE12ABE0F6500BB4AB8 /* MidView.swift in Sources */,
 				F4F1C9882ABA0A3D000C3B0A /* RPG_ManagerApp.swift in Sources */,
 				F4F1C9A42ABA4095000C3B0A /* ViewModel.swift in Sources */,
+				F4E719722AC365B40072236C /* PersonagemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
