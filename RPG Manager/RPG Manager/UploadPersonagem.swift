@@ -14,6 +14,7 @@ struct UploadPersonagem: View {
     @State var idade:String = ""
     @State var player:String = ""
     @State var url:String = ""
+    @State var desc:String = "Insira aqui"
     var body: some View {
         ZStack{
             Image("BG")
@@ -151,16 +152,31 @@ struct UploadPersonagem: View {
                             .multilineTextAlignment(.center)
                             .padding(.top,-5)
                         
-                        ScrollView{
-                            Text("")
-                                .frame(width: 330)
-                            
+                      
+                          
+                        if(desc=="Insira aqui"){
+                            TextEditor(text:$desc)
+                                .foregroundColor(.gray)
+                                .frame(width: 330,height: 200)
+                                .multilineTextAlignment(.center)
+                                .scrollContentBackground(.hidden)
+                                .padding(.top,-10)
+                                .opacity(01.0)
+                        }else{
+                            TextEditor(text:$desc)
+                                .foregroundColor(.black)
+                                .frame(width: 330,height: 200)
+                                .multilineTextAlignment(.center)
+                                .scrollContentBackground(.hidden)
+                                .padding(.top,-10)
+                                
                         }
+                        
                         Spacer()
                     }
                 }//Fim ZStack
                 Spacer()
-                NavigationLink{UploadPersonagem2()} label:{
+                NavigationLink{UploadPersonagem2(nome: nome, raca: raca, classe: classe, idade: idade, player: player, url: url, desc: desc)} label:{
                     ZStack{
                         Rectangle()
                             .frame(width: 200,height: 70)
@@ -170,8 +186,8 @@ struct UploadPersonagem: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color.black)
-                            
                     }
+                    
                 }
                 Spacer()//Fim label
             }//Fim Vstack

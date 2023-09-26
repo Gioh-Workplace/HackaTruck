@@ -1,4 +1,3 @@
-
 //
 //  ViewModel.swift
 //  RPGs
@@ -9,6 +8,7 @@
 import Foundation
 
 struct RPG: Decodable, Hashable {
+    
     let _id: String?
     let nome : String?
     let jogador: String?
@@ -18,13 +18,14 @@ struct RPG: Decodable, Hashable {
     let sistema: String?
     let desc: String?
     let img:String?
+        
 }
 
 class ViewModelRPG : ObservableObject {
     @Published var personagens : [RPG] = []
     
     func fetch(){
-        guard let url = URL(string: "http://127.0.0.1:1880/AmongUsRead" ) else{
+        guard let url = URL(string: "http://192.168.128.254:1880/AmongUsRead" ) else{
             return
         }
         
