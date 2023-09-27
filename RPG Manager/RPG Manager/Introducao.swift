@@ -9,22 +9,45 @@ import SwiftUI
 
 struct Introducao: View {
     var body: some View {
-        
-        ZStack{
-            Image("BG").resizable().scaledToFill().ignoresSafeArea()
-            Image("bground").resizable().frame(width: 400,height: 500)
+        ZStack {
+            Image("BG")
+            
             VStack{
             
-                Text("Introducao")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Divider()
+           
+                Image("IntroImg").resizable()
+                    
+                    .frame(width: 300, height: 100)
                 
-                    .overlay(.black)
-                    Text("Albion online é um mmorpg sandbox em ")
-                Spacer()
-            }.frame(width:400,height: 500)
+                ZStack {
+                    Image("bground").resizable().frame(width: 400.0, height: 380.0).padding(.top,-50)
+                    VStack{
+        
+                        Text("Este é um aplicativo para pessoas que desejam conhecer mais sobre RPG, com foco em D&D. Aqui voce vai poder se aprofundar em detalhes sobre os livros disponíveis, sobre os personagens, sobre como funcionam as classes, as raças, as regras e também terá como opção criar o seu próprio personagem para se integrar mais ainda a esse universo.")
+                            .fontWeight(.semibold)
+                            .padding(.horizontal, 15.0)
+                        
+                        
+                        
+                        Spacer()
+                    }.frame(width: 400, height: 400)
+                }
+            }
+            
+            
+            NavigationLink {Regras()} label:{
+                ZStack {
+                    Rectangle().frame(width:200.0, height: 70).foregroundColor(.orange).cornerRadius(40)
+                    
+                    Text("Regras").font(.title).fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        
+                }
+        
+            }
+            .padding(.top, 530.0)
         }
+        
     }
 }
 
